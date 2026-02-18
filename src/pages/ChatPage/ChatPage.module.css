@@ -1,0 +1,73 @@
+/* pages/ChatPage/ChatPage.module.css */
+
+.page {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-main);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.blob1 {
+  position: fixed;
+  top: -120px;
+  left: -80px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 40% 40%,
+    rgba(41, 121, 255, 0.1),
+    transparent 65%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+.blob2 {
+  position: fixed;
+  bottom: -100px;
+  right: -60px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 60% 60%,
+    rgba(0, 229, 255, 0.08),
+    transparent 65%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.layout {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  max-width: 1100px;
+  height: calc(100vh - 48px);
+  max-height: 760px;
+  animation: fadeIn 0.4s ease;
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding: 0;
+    align-items: flex-start;
+  }
+  .layout {
+    flex-direction: column;
+    gap: 0;
+    max-height: 100vh;
+    height: 100vh;
+  }
+  .blob1,
+  .blob2 {
+    display: none;
+  }
+}
